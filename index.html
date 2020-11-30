@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Alex Dupre | Spark Tokens Claiming Tool</title>
+    <style>
+        form {
+            font: 1em sans-serif;
+            max-width: 360px;
+        }
+
+        p > label {
+            display: block;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        fieldset {
+            width : 100%;
+            border: 1px solid #333;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+<h2>Spark Tokens (Flare Network) Claiming Tool by Alex Dupre</h2>
+<p>DISCLAIMER: Use this tool <strong>at your own risk</strong>. No guarantees & no support. I'm not affiliated with Flare (Flare Networks) and/or the Spark token.</p>
+<p>Please note that Spark tokens <strong>WILL NOT</strong> be sent yet, the Flare network <strong>IS NOT LIVE</strong> yet.
+    This tool will only allow you to claim them, i.e. to associate your Ripple address to the Flare address.</p>
+<p>This tool <strong>is not</strong> for the average user, you have to enter your Ripple secret key, I'm not responsible for any direct or indirect consequence deriving from it, you are the only responsible for safe handling of your private keys.</p>
+<p>If you agree to the above terms you can continue, otherwise claim your spark tokens with the officially supported <a href=" https://flare.wietse.com/">tool</a> using the XUMM APP or Ledger Nano.</p>
+<form>
+    <p>
+    <fieldset>
+        <legend>Ripple Network</legend>
+        <input type="radio" id="mainnet" name="network" value="mainnet" checked><label for="mainnet">MainNet</label>
+        <input type="radio" id="testnet" name="network" value="testnet"><label for="testnet">TestNet</label>
+    </fieldset>
+    </p>
+    <p>
+        <label for="secret">Ripple Secret/Seed</label>
+        <input type="password" id="secret" name="secret" placeholder="s...">
+    </p>
+    <fieldset>
+        <legend>Generate New Flare/Spark KeyPair?</legend>
+        <input type="radio" id="yes" name="generate" value="yes" required onclick="document.getElementById('addressBlock').style.display = 'none'" checked><label for="yes">Yes</label>
+        <input type="radio" id="no" name="generate" value="no" required onclick="document.getElementById('addressBlock').style.display = 'inherit'"><label for="no">No</label>
+    </fieldset>
+    <p id="addressBlock" style="display: none">
+        <label for="address">Flare/Spark Address</label>
+        <input type="text" id="address" name="address" placeholder="0x...">
+    </p>
+</form>
+<p>
+    <button id="claim">Claim Spark Tokens!</button>
+</p>
+<script type="text/javascript" src="./target/scala-2.13/scalajs-bundler/main/claim-spark-tokens-fastopt-bundle.js"></script>
+</body>
+</html>

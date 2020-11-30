@@ -1,0 +1,9 @@
+# sbt
+target/
+/.bsp
+
+# IDEA
+/.idea
+
+# yarn
+/yarn.lock
